@@ -968,8 +968,8 @@ TextureImporter:
       name: WalkUp2
       rect:
         serializedVersion: 2
-        x: 63
-        y: 127
+        x: 64
+        y: 128
         width: 64
         height: 64
       alignment: 0
