@@ -16,6 +16,8 @@ public class PlayerInput : MonoBehaviour {
 
     public float speed = 5;
 
+    bool searchInteraction = false, interactionLock = false;
+
     void EnablePlayerMap () {
         if (controls == null) {
             controls = new InputMaster ();
@@ -28,11 +30,21 @@ public class PlayerInput : MonoBehaviour {
 
         EnablePlayerMap ();
 
+        controls.PlayerMap.Interact.performed += ctx => SearchInteraction();
+        controls.PlayerMap.Interact.canceled += ctx => interactionLock = false;
+
         controls.PlayerMap.Movement.performed += ctx => ReadMomventInput (ctx.ReadValue<Vector2> ());
         controls.PlayerMap.Movement.canceled += ctx => ReadMomventInput (Vector2.zero);
     }
     public void OnEnable () {
         EnablePlayerMap ();
+    }
+
+    void SearchInteraction () {
+        if (interactionLock) return;
+
+        searchInteraction = true;
+        interactionLock = true;
     }
 
     void ReadMomventInput (Vector2 input) {
@@ -44,5 +56,10 @@ public class PlayerInput : MonoBehaviour {
 
     private void FixedUpdate () {
         player.MoveCharacter (movementInput * speed);
+
+        if (searchInteraction) {
+            player.SearchInteraction ();
+            searchInteraction = false;
+        }
     }
 }
