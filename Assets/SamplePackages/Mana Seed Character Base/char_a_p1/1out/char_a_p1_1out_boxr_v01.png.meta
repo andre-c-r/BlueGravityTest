@@ -104,7 +104,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: char_a_p1_1out_boxr_v01_0
+      name: StandingDown
       rect:
         serializedVersion: 2
         x: 0
@@ -188,7 +188,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: char_a_p1_1out_boxr_v01_4
+      name: StandingUp
       rect:
         serializedVersion: 2
         x: 0
@@ -356,7 +356,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: char_a_p1_1out_boxr_v01_12
+      name: StandingRight
       rect:
         serializedVersion: 2
         x: 0
@@ -524,7 +524,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: char_a_p1_1out_boxr_v01_20
+      name: StandingLeft
       rect:
         serializedVersion: 2
         x: 0
@@ -1377,7 +1377,6 @@ TextureImporter:
       char_a_p1_1out_boxr_v01_17: -1319130201
       WalkLeft0: -1647701374
       char_a_p1_1out_boxr_v01_21: -1895489117
-      char_a_p1_1out_boxr_v01_4: -1346746380
       WalkLeft3: -1232368254
       WalkDown1: 1462995630
       char_a_p1_1out_boxr_v01_8: 1153554689
@@ -1399,9 +1398,11 @@ TextureImporter:
       char_a_p1_1out_boxr_v01_11: 2119664585
       char_a_p1_1out_boxr_v01_18: -551065190
       char_a_p1_1out_boxr_v01_25: 2120329323
+      StandingRight: 688212764
       RunDown5: 1992513870
       WalkUp2: 847796783
       WalkUp3: -1909641415
+      StandingLeft: -457461135
       char_a_p1_1out_boxr_v01_26: -2143242224
       WalkUp4: 1317356781
       char_a_p1_1out_boxr_v01_22: 522850148
@@ -1426,14 +1427,13 @@ TextureImporter:
       char_a_p1_1out_boxr_v01_5: 1462995630
       WalkRight1: 1665868135
       RunDown2: 1992513870
-      char_a_p1_1out_boxr_v01_0: -457461135
+      StandingDown: -445939884
       WalkLeft1: 1224379114
       RunUp2: -497665779
       WalkRight2: 1482702156
-      char_a_p1_1out_boxr_v01_20: 688212764
-      char_a_p1_1out_boxr_v01_12: 2090482455
       WalkDown2: 199981434
       char_a_p1_1out_boxr_v01_16: 1893065004
+      StandingUp: -1346746380
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
