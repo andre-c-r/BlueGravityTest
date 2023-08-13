@@ -14,11 +14,11 @@ public class MenuController : MonoBehaviour {
 
     public GameObject cashBox;
 
-    public GameObject itemsBox, inventoryCellPrefab, inventoryContent, shopContent;
+    public GameObject itemsBox, inventoryCellPrefab, inventoryContent, shopContent, shopCellPrefab;
     
     public Button closeBtn;
 
-    List<InventoryButton> buttons = new List<InventoryButton> ();
+    List<ItemButtonBase> buttons = new List<ItemButtonBase> ();
 
     bool closeDialogue = false;
     bool closeAllWindows = false;
@@ -27,12 +27,26 @@ public class MenuController : MonoBehaviour {
         cashText.text = i_cash.ToString() + " Z";
     }
 
+    public void SelectCloseButton () {
+        closeBtn.Select ();
+    }
+
     public void SetupShop (Item[] itemList) {
         InputController.Singleton.EnableMenuMap ();
 
+        foreach (Item item in itemList) {
+            ShopButton auxButton = Instantiate (shopCellPrefab, shopContent.transform).GetComponent<ShopButton> ();
+            auxButton.SetupItem (item);
+
+            //checks if player already have item
+            if (PlayerInventory.Singleton.GetInventory ().Contains (item)) auxButton.button.interactable = false;
+
+            buttons.Add (auxButton);
+        }
+
         cashBox.SetActive (true);
 
-        closeBtn.Select ();
+        SelectCloseButton ();
 
         itemsBox.SetActive (true);
         shopContent.SetActive (true);
@@ -48,13 +62,12 @@ public class MenuController : MonoBehaviour {
             buttons.Add (auxButton);
         }
 
-        closeBtn.GetComponent<Button> ().Select ();
+        SelectCloseButton ();
 
         itemsBox.SetActive (true);
         shopContent.SetActive (false);
         inventoryContent.SetActive (true);
     }
-
 
     public void SetupDialogue (string message) {
         InputController.Singleton.EnableMenuMap ();
@@ -69,7 +82,7 @@ public class MenuController : MonoBehaviour {
         itemsBox.SetActive (false);
         cashBox.SetActive (false);
 
-        foreach (InventoryButton button in buttons) {
+        foreach (ItemButtonBase button in buttons) {
             Destroy (button.gameObject);
         }
 

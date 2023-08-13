@@ -30,6 +30,8 @@ public class PlayerInventory : MonoBehaviour {
         cash -= i_item.itemPrice;
         MenuController.Singleton.SetCashText (cash);
         inventoryItems.Add (i_item);
+
+        MenuController.Singleton.SelectCloseButton ();
     }
 
     public void AddItem (Item item) {

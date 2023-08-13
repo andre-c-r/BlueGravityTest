@@ -4,11 +4,6 @@ using UnityEngine;
 
 public class InventoryButton : ItemButtonBase {
 
-    public virtual void SetupItem (Item i_Item) {
-        item = i_Item;
-        nameText.text = item.name;
-    }
-
     public void EquipItem () {
         Animator anim = PlayerInventory.Singleton.outfitSwapAnimator;
 

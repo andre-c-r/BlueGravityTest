@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Cool Mage Hat
   itemPrice: 9000
-  ItemIcon: {fileID: 0}
+  ItemIcon: {fileID: -180017718, guid: 517f173c4747e9a45812a303ed87c8ba, type: 3}

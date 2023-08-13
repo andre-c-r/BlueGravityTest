@@ -18,6 +18,7 @@ public class ShopButton : ItemButtonBase {
     public void SetupItem () {
         nameText.text = item.name;
         priceText.text = item.itemPrice.ToString() + " Z";
+        itemIcon.sprite = item.ItemIcon;
     }
 
     private void Awake () {

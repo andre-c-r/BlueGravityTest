@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Robe
   itemPrice: 500
-  ItemIcon: {fileID: 0}
+  ItemIcon: {fileID: 568420409, guid: 7c73df331fab55940b68800fab126dbb, type: 3}
