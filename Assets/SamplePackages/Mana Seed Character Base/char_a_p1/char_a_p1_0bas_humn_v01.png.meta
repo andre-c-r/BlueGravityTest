@@ -104,7 +104,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: char_a_p1_0bas_humn_v01_0
+      name: StandingDown
       rect:
         serializedVersion: 2
         x: 0
@@ -272,7 +272,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: char_a_p1_0bas_humn_v01_8
+      name: StandingUp
       rect:
         serializedVersion: 2
         x: 0
@@ -440,7 +440,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: char_a_p1_0bas_humn_v01_16
+      name: StandingRight
       rect:
         serializedVersion: 2
         x: 0
@@ -608,7 +608,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: char_a_p1_0bas_humn_v01_24
+      name: StandingLeft
       rect:
         serializedVersion: 2
         x: 0
@@ -1485,34 +1485,33 @@ TextureImporter:
       char_a_p1_0bas_humn_v01_14: -1418615691
       RunUp6: -678749792
       char_a_p1_0bas_humn_v01_22: 187285545
+      StandingRight: -338068695
       WalkRight6: -1675325732
       WalkUp2: 2120917040
       WalkUp3: 150864484
+      StandingLeft: -1813646043
       WalkUp4: -827680010
       char_a_p1_0bas_humn_v01_15: 960348858
       char_a_p1_0bas_humn_v01_3: -563092967
       WalkLeft4: -1023094907
-      char_a_p1_0bas_humn_v01_8: -895714445
       char_a_p1_0bas_humn_v01_5: 939186590
       WalkRight3: -1631979531
       char_a_p1_0bas_humn_v01_2: 1211768543
       char_a_p1_0bas_humn_v01_12: 68569207
-      char_a_p1_0bas_humn_v01_16: -338068695
+      RunDown3: 651383913
       char_a_p1_0bas_humn_v01_30: -1307965982
       WalkUp5: -2112951638
       char_a_p1_0bas_humn_v01_10: 1082810400
       WalkUp1: 134963678
       WalkLeft5: 874817451
-      RunDown3: 651383913
-      char_a_p1_0bas_humn_v01_18: 506847204
       WalkRight4: -1796564711
+      char_a_p1_0bas_humn_v01_18: 506847204
       char_a_p1_0bas_humn_v01_19: 209844263
-      char_a_p1_0bas_humn_v01_0: 1458124702
       char_a_p1_0bas_humn_v01_29: -1861006554
       RunLeft6: 877990097
       char_a_p1_0bas_humn_v01_27: -1549309956
+      StandingDown: 1458124702
       WalkLeft1: -2099832474
-      char_a_p1_0bas_humn_v01_24: -1813646043
       char_a_p1_0bas_humn_v01_7: 885177181
       char_a_p1_0bas_humn_v01_17: -522127723
       WalkRight2: -1706269530
@@ -1521,6 +1520,7 @@ TextureImporter:
       char_a_p1_0bas_humn_v01_13: 657872590
       WalkDown2: 598825300
       char_a_p1_0bas_humn_v01_21: -1237898187
+      StandingUp: -895714445
       char_a_p1_0bas_humn_v01_28: -2125528928
   spritePackingTag: 
   pSDRemoveMatte: 0

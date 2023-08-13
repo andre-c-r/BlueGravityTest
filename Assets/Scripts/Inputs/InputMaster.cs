@@ -140,7 +140,7 @@ public partial class @InputMaster : IInputActionCollection2, IDisposable
             ""id"": ""fb1094d9-441c-415f-8a16-0ec1f26190d4"",
             ""actions"": [
                 {
-                    ""name"": ""Accept"",
+                    ""name"": ""Submit"",
                     ""type"": ""Button"",
                     ""id"": ""186c31f1-57c4-4669-bc39-f1fee14b2fd8"",
                     ""expectedControlType"": ""Button"",
@@ -156,6 +156,15 @@ public partial class @InputMaster : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Navigate"",
+                    ""type"": ""PassThrough"",
+                    ""id"": ""6056e57f-4722-4eab-994f-5bbdf6038b37"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -166,7 +175,7 @@ public partial class @InputMaster : IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Keyboard"",
-                    ""action"": ""Accept"",
+                    ""action"": ""Submit"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -180,6 +189,105 @@ public partial class @InputMaster : IInputActionCollection2, IDisposable
                     ""action"": ""Reject"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""Keyboard"",
+                    ""id"": ""d9c67f4b-836e-4d2a-8a22-96215212dc26"",
+                    ""path"": ""2DVector"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""Navigate"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""c3b7de23-deb6-4932-8a9d-daca9d1868d8"",
+                    ""path"": ""<Keyboard>/w"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""Navigate"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""27e1ab90-4976-4a58-8827-16134a885565"",
+                    ""path"": ""<Keyboard>/upArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""Navigate"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""17d5d220-6724-48a8-8507-c918fa6c9993"",
+                    ""path"": ""<Keyboard>/s"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""Navigate"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""b8c1683a-783b-4589-b8d9-246d06760759"",
+                    ""path"": ""<Keyboard>/downArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""Navigate"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""61e14c89-2424-4fb2-bd97-f48967a00e63"",
+                    ""path"": ""<Keyboard>/a"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""Navigate"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""f021f677-1f31-4637-9c55-294663c3b913"",
+                    ""path"": ""<Keyboard>/leftArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""Navigate"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""c97199d7-c8be-4ebe-b2e9-f469e18a9920"",
+                    ""path"": ""<Keyboard>/d"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""Navigate"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""820f7130-9948-427d-90c6-e04527672452"",
+                    ""path"": ""<Keyboard>/rightArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""Navigate"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
                 }
             ]
         }
@@ -205,8 +313,9 @@ public partial class @InputMaster : IInputActionCollection2, IDisposable
         m_PlayerMap_OpenMenu = m_PlayerMap.FindAction("OpenMenu", throwIfNotFound: true);
         // Menu
         m_Menu = asset.FindActionMap("Menu", throwIfNotFound: true);
-        m_Menu_Accept = m_Menu.FindAction("Accept", throwIfNotFound: true);
+        m_Menu_Submit = m_Menu.FindAction("Submit", throwIfNotFound: true);
         m_Menu_Reject = m_Menu.FindAction("Reject", throwIfNotFound: true);
+        m_Menu_Navigate = m_Menu.FindAction("Navigate", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -315,14 +424,16 @@ public partial class @InputMaster : IInputActionCollection2, IDisposable
     // Menu
     private readonly InputActionMap m_Menu;
     private IMenuActions m_MenuActionsCallbackInterface;
-    private readonly InputAction m_Menu_Accept;
+    private readonly InputAction m_Menu_Submit;
     private readonly InputAction m_Menu_Reject;
+    private readonly InputAction m_Menu_Navigate;
     public struct MenuActions
     {
         private @InputMaster m_Wrapper;
         public MenuActions(@InputMaster wrapper) { m_Wrapper = wrapper; }
-        public InputAction @Accept => m_Wrapper.m_Menu_Accept;
+        public InputAction @Submit => m_Wrapper.m_Menu_Submit;
         public InputAction @Reject => m_Wrapper.m_Menu_Reject;
+        public InputAction @Navigate => m_Wrapper.m_Menu_Navigate;
         public InputActionMap Get() { return m_Wrapper.m_Menu; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -332,22 +443,28 @@ public partial class @InputMaster : IInputActionCollection2, IDisposable
         {
             if (m_Wrapper.m_MenuActionsCallbackInterface != null)
             {
-                @Accept.started -= m_Wrapper.m_MenuActionsCallbackInterface.OnAccept;
-                @Accept.performed -= m_Wrapper.m_MenuActionsCallbackInterface.OnAccept;
-                @Accept.canceled -= m_Wrapper.m_MenuActionsCallbackInterface.OnAccept;
+                @Submit.started -= m_Wrapper.m_MenuActionsCallbackInterface.OnSubmit;
+                @Submit.performed -= m_Wrapper.m_MenuActionsCallbackInterface.OnSubmit;
+                @Submit.canceled -= m_Wrapper.m_MenuActionsCallbackInterface.OnSubmit;
                 @Reject.started -= m_Wrapper.m_MenuActionsCallbackInterface.OnReject;
                 @Reject.performed -= m_Wrapper.m_MenuActionsCallbackInterface.OnReject;
                 @Reject.canceled -= m_Wrapper.m_MenuActionsCallbackInterface.OnReject;
+                @Navigate.started -= m_Wrapper.m_MenuActionsCallbackInterface.OnNavigate;
+                @Navigate.performed -= m_Wrapper.m_MenuActionsCallbackInterface.OnNavigate;
+                @Navigate.canceled -= m_Wrapper.m_MenuActionsCallbackInterface.OnNavigate;
             }
             m_Wrapper.m_MenuActionsCallbackInterface = instance;
             if (instance != null)
             {
-                @Accept.started += instance.OnAccept;
-                @Accept.performed += instance.OnAccept;
-                @Accept.canceled += instance.OnAccept;
+                @Submit.started += instance.OnSubmit;
+                @Submit.performed += instance.OnSubmit;
+                @Submit.canceled += instance.OnSubmit;
                 @Reject.started += instance.OnReject;
                 @Reject.performed += instance.OnReject;
                 @Reject.canceled += instance.OnReject;
+                @Navigate.started += instance.OnNavigate;
+                @Navigate.performed += instance.OnNavigate;
+                @Navigate.canceled += instance.OnNavigate;
             }
         }
     }
@@ -369,7 +486,8 @@ public partial class @InputMaster : IInputActionCollection2, IDisposable
     }
     public interface IMenuActions
     {
-        void OnAccept(InputAction.CallbackContext context);
+        void OnSubmit(InputAction.CallbackContext context);
         void OnReject(InputAction.CallbackContext context);
+        void OnNavigate(InputAction.CallbackContext context);
     }
 }

@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e14303ddde42a7498eb7e987084f937, type: 3}
   m_Name: Robe
   m_EditorClassIdentifier: 
+  available: 1
   itemName: Robe
   itemPrice: 0
   ItemIcon: {fileID: 0}

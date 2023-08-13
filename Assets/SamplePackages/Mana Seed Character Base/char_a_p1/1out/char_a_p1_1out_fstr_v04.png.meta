@@ -104,7 +104,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: char_a_p1_1out_fstr_v04_0
+      name: ArmorStandingDown
       rect:
         serializedVersion: 2
         x: 0
@@ -272,7 +272,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: char_a_p1_1out_fstr_v04_8
+      name: ArmorStandingUp
       rect:
         serializedVersion: 2
         x: 0
@@ -440,7 +440,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: char_a_p1_1out_fstr_v04_16
+      name: ArmorStandingRight
       rect:
         serializedVersion: 2
         x: 0
@@ -608,7 +608,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: char_a_p1_1out_fstr_v04_24
+      name: ArmorStandingLeft
       rect:
         serializedVersion: 2
         x: 0
@@ -1460,9 +1460,7 @@ TextureImporter:
     nameFileIdTable:
       char_a_p1_1out_fstr_v04_19: 401329874
       char_a_p1_1out_fstr_v04_1: 826761269
-      char_a_p1_1out_fstr_v04_8: -475076095
       char_a_p1_1out_fstr_v04_12: 1027194470
-      char_a_p1_1out_fstr_v04_0: 1414233987
       char_a_p1_1out_fstr_v04_17: -1076772026
       char_a_p1_1out_fstr_v04_7: -1506847194
       char_a_p1_1out_fstr_v04_20: 538776182
@@ -1478,14 +1476,16 @@ TextureImporter:
       char_a_p1_1out_fstr_v04_5: -298431043
       RunLeft3: 2140263873
       RunRight6: 632821173
+      ArmorStandingDown: 1414233987
       WalkDown4: 537193098
       WalkDown6: 1832211484
       WalkDown5: -123233613
       WalkLeft2: -2087900199
       WalkRight5: -1704240121
+      ArmorStandingRight: 691547117
+      ArmorStandingLeft: -430693343
       char_a_p1_1out_fstr_v04_9: -168424697
       RunRight3: 721729508
-      char_a_p1_1out_fstr_v04_16: 691547117
       char_a_p1_1out_fstr_v04_14: -1937004763
       char_a_p1_1out_fstr_v04_22: -644405261
       char_a_p1_1out_fstr_v04_15: -823439119
@@ -1494,9 +1494,8 @@ TextureImporter:
       WalkRight6: 928479446
       WalkUp3: -516431720
       WalkUp2: 1411248273
-      char_a_p1_1out_fstr_v04_24: -430693343
-      char_a_p1_1out_fstr_v04_10: -670544011
       WalkUp4: -50554070
+      char_a_p1_1out_fstr_v04_10: -670544011
       char_a_p1_1out_fstr_v04_2: 825306830
       char_a_p1_1out_fstr_v04_18: 897745822
       WalkLeft4: -1019348872
@@ -1511,6 +1510,7 @@ TextureImporter:
       char_a_p1_1out_fstr_v04_27: 1752687510
       char_a_p1_1out_fstr_v04_31: -2000996485
       char_a_p1_1out_fstr_v04_11: 9021997
+      ArmorStandingUp: -475076095
       WalkRight1: 953372738
       char_a_p1_1out_fstr_v04_25: -1338230747
       char_a_p1_1out_fstr_v04_29: 1328495672
