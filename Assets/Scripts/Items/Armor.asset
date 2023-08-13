@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Armor
   m_EditorClassIdentifier: 
   itemName: Armor
-  itemPrice: 0
+  itemPrice: 400
   ItemIcon: {fileID: 0}

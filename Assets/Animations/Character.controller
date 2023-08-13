@@ -250,6 +250,25 @@ AnimatorState:
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
   m_TimeParameter: 
+--- !u!1107 &-913860024449855894
+AnimatorStateMachine:
+  serializedVersion: 6
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Robe
+  m_ChildStates: []
+  m_ChildStateMachines: []
+  m_AnyStateTransitions: []
+  m_EntryTransitions: []
+  m_StateMachineTransitions: {}
+  m_StateMachineBehaviours: []
+  m_AnyStatePosition: {x: 50, y: 20, z: 0}
+  m_EntryPosition: {x: 50, y: 120, z: 0}
+  m_ExitPosition: {x: 800, y: 120, z: 0}
+  m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
+  m_DefaultState: {fileID: 0}
 --- !u!91 &9100000
 AnimatorController:
   m_ObjectHideFlags: 0
@@ -323,6 +342,42 @@ AnimatorController:
     m_BlendingMode: 0
     m_SyncedLayerIndex: 0
     m_DefaultWeight: 1
+    m_IKPass: 0
+    m_SyncedLayerAffectsTiming: 0
+    m_Controller: {fileID: 9100000}
+  - serializedVersion: 5
+    m_Name: Robe
+    m_StateMachine: {fileID: -913860024449855894}
+    m_Mask: {fileID: 0}
+    m_Motions:
+    - serializedVersion: 2
+      m_State: {fileID: 5564788318541495327}
+      m_Motion: {fileID: 7400000, guid: f19b2d983a47d154697b84c4af04b5fe, type: 2}
+    - serializedVersion: 2
+      m_State: {fileID: 4419737440994515963}
+      m_Motion: {fileID: 7400000, guid: 766ab4d510cc9db4c908c14851141cab, type: 2}
+    - serializedVersion: 2
+      m_State: {fileID: 2398053620672525439}
+      m_Motion: {fileID: 7400000, guid: bb896eeeca0ce6b43b9f791bab0ceb69, type: 2}
+    - serializedVersion: 2
+      m_State: {fileID: 8250511192804002164}
+      m_Motion: {fileID: 7400000, guid: f59e411944e28ff42a31120f82d19a18, type: 2}
+    - serializedVersion: 2
+      m_State: {fileID: 3724460552047684551}
+      m_Motion: {fileID: 7400000, guid: 59ee264de7c2c8e48b7e0ba19727bf44, type: 2}
+    - serializedVersion: 2
+      m_State: {fileID: 3297459445563436113}
+      m_Motion: {fileID: 7400000, guid: 424319792a5de314e82e6280886e020b, type: 2}
+    - serializedVersion: 2
+      m_State: {fileID: -1858658416979151107}
+      m_Motion: {fileID: 7400000, guid: e905a3a96f0db6a489f1e9bab5f69607, type: 2}
+    - serializedVersion: 2
+      m_State: {fileID: -5854670831392364290}
+      m_Motion: {fileID: 7400000, guid: 41c9665d196cff1439f9e99c5df89240, type: 2}
+    m_Behaviours: []
+    m_BlendingMode: 0
+    m_SyncedLayerIndex: 0
+    m_DefaultWeight: 0
     m_IKPass: 0
     m_SyncedLayerAffectsTiming: 0
     m_Controller: {fileID: 9100000}

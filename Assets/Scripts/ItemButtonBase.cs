@@ -5,10 +5,9 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class ItemButtonBase : MonoBehaviour {
-    public TextMeshProUGUI NameBox;
+    public TextMeshProUGUI nameText;
 
     public Button button;
 
-    protected Item item;
-
+    public Item item;
 }
