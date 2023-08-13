@@ -104,7 +104,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: char_a_p1_1out_pfpn_v04_0
+      name: RobeStandingDown
       rect:
         serializedVersion: 2
         x: 0
@@ -272,7 +272,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: char_a_p1_1out_pfpn_v04_8
+      name: RobeStandingUp
       rect:
         serializedVersion: 2
         x: 0
@@ -440,7 +440,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: char_a_p1_1out_pfpn_v04_16
+      name: RobeStandingRight
       rect:
         serializedVersion: 2
         x: 0
@@ -608,7 +608,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: char_a_p1_1out_pfpn_v04_24
+      name: RobeStandingLeft
       rect:
         serializedVersion: 2
         x: 0
@@ -1467,7 +1467,6 @@ TextureImporter:
       WalkDown3: 1829791466
       char_a_p1_1out_pfpn_v04_11: 236770757
       char_a_p1_1out_pfpn_v04_19: 1518773457
-      char_a_p1_1out_pfpn_v04_24: 1187737445
       char_a_p1_1out_pfpn_v04_31: 602910758
       WalkDown4: 879282691
       WalkDown5: -1823334711
@@ -1485,26 +1484,26 @@ TextureImporter:
       char_a_p1_1out_pfpn_v04_14: -1805514809
       WalkUp0: -1575919862
       char_a_p1_1out_pfpn_v04_28: -1579231390
-      char_a_p1_1out_pfpn_v04_9: 637153816
-      char_a_p1_1out_pfpn_v04_17: -1414774255
       WalkUp2: -1539525450
+      WalkUp3: 907173752
+      char_a_p1_1out_pfpn_v04_17: -1414774255
       WalkUp4: 674945347
       char_a_p1_1out_pfpn_v04_46: 1073081561
       char_a_p1_1out_pfpn_v04_55: 1434885157
+      RobeStandingRight: 1885360432
       WalkLeft4: -1786105285
-      WalkUp3: 907173752
+      char_a_p1_1out_pfpn_v04_9: 637153816
       char_a_p1_1out_pfpn_v04_30: -1100675526
       WalkRight3: 575414595
       char_a_p1_1out_pfpn_v04_18: 607144566
-      char_a_p1_1out_pfpn_v04_0: 1661981389
       char_a_p1_1out_pfpn_v04_23: 2067782830
       char_a_p1_1out_pfpn_v04_47: 992029833
       WalkRight4: 1214608083
       WalkUp5: 1523928787
       WalkLeft5: 1577180312
-      char_a_p1_1out_pfpn_v04_16: 1885360432
       WalkUp1: 1759307788
-      char_a_p1_1out_pfpn_v04_8: 232059363
+      RobeStandingLeft: 1187737445
+      RobeStandingDown: 1661981389
       WalkDown0: 1539129075
       char_a_p1_1out_pfpn_v04_20: 1202617600
       char_a_p1_1out_pfpn_v04_54: 2083542446
@@ -1521,6 +1520,7 @@ TextureImporter:
       WalkRight2: -928020042
       WalkDown2: -1776600963
       char_a_p1_1out_pfpn_v04_39: -550831001
+      RobeStandingUp: 232059363
       char_a_p1_1out_pfpn_v04_25: 221921481
   spritePackingTag: 
   pSDRemoveMatte: 0
