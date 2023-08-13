@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class Store : InteractiveAgent {
 
-    public StoreItem[] itemsForSale;
+    public Item[] itemsForSale;
 
     public override void Interact () {
         base.Interact ();
+
+        MenuController.Singleton.SetupInventory (itemsForSale);
     }
 }
