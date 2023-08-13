@@ -2,8 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerInventory : MonoBehaviour
-{
+public class PlayerInventory : MonoBehaviour {
     public static PlayerInventory Singleton;
 
     public Animator outfitSwapAnimator;
@@ -14,22 +13,23 @@ public class PlayerInventory : MonoBehaviour
 
     bool openMenu = false;
 
-    private void Start () {
-        InputController.Singleton.EnablePlayerMap ();
-
-        InputController.Singleton.controls.PlayerMap.OpenMenu.performed += ctx => openMenu = true;
-    }
+    public List<Item> initialItems = new List<Item> ();
 
     public List<Item> GetInventory () {
         return inventoryItems;
     }
 
-    public void BuyItem (Item item) {
-        if (inventoryItems.Contains (item)) return;
+    public bool CanBuyItem (Item i_item) {
+        return i_item.itemPrice <= cash;
+    }
 
-        cash -= item.itemPrice;
+    public void BuyItem (Item i_item) {
+        if (inventoryItems.Contains (i_item)) return;
+        if (!CanBuyItem (i_item)) return;
+
+        cash -= i_item.itemPrice;
         MenuController.Singleton.SetCashText (cash);
-        inventoryItems.Add (item);
+        inventoryItems.Add (i_item);
     }
 
     public void AddItem (Item item) {
@@ -37,6 +37,15 @@ public class PlayerInventory : MonoBehaviour
 
         inventoryItems.Add (item);
     }
+
+    private void Start () {
+        InputController.Singleton.EnablePlayerMap ();
+
+        InputController.Singleton.controls.PlayerMap.OpenMenu.performed += ctx => openMenu = true;
+
+        foreach (Item item in initialItems) AddItem (item);
+    }
+
 
     private void Awake () {
         if (Singleton != null) Destroy (this);

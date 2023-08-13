@@ -20,6 +20,9 @@ public class MenuController : MonoBehaviour {
 
     List<InventoryButton> buttons = new List<InventoryButton> ();
 
+    bool closeDialogue = false;
+    bool closeAllWindows = false;
+
     public void SetCashText (int i_cash) {
         cashText.text = i_cash.ToString() + " Z";
     }
@@ -54,6 +57,8 @@ public class MenuController : MonoBehaviour {
 
 
     public void SetupDialogue (string message) {
+        InputController.Singleton.EnableMenuMap ();
+
         dialogueText.text = message;
 
         dialogueBox.SetActive (true);
@@ -70,10 +75,32 @@ public class MenuController : MonoBehaviour {
 
         buttons.Clear ();
 
+        closeAllWindows = false;
+        closeDialogue = false;
+
         InputController.Singleton.EnablePlayerMap ();
     }
 
+    void CheckForCloseWindowsCommand () {
+        if (!closeAllWindows) {
+            if (!closeDialogue) return;
+            //it's not a common dialogue if itesbox is open
+            if (itemsBox.activeSelf) return;
+
+        }
+
+        CloseAllWindows ();
+    }
+
+    private void FixedUpdate () {
+        CheckForCloseWindowsCommand ();
+    }
+
     private void Start () {
+        InputController.Singleton.EnablePlayerMap ();
+
+        InputController.Singleton.controls.Menu.Submit.performed += ctx => closeDialogue = true;
+        InputController.Singleton.controls.Menu.Reject.performed += ctx => closeAllWindows = true;
 
         CloseAllWindows ();
     }
