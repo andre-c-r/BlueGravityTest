@@ -15,7 +15,7 @@ public class MenuController : MonoBehaviour {
     public GameObject cashBox;
 
     public GameObject itemsBox, inventoryCellPrefab, inventoryContent, shopContent, shopCellPrefab;
-    
+
     public Button closeBtn;
 
     List<ItemButtonBase> buttons = new List<ItemButtonBase> ();
@@ -24,7 +24,7 @@ public class MenuController : MonoBehaviour {
     bool closeAllWindows = false;
 
     public void SetCashText (int i_cash) {
-        cashText.text = i_cash.ToString() + " Z";
+        cashText.text = i_cash.ToString () + " Z";
     }
 
     public void SelectCloseButton () {
@@ -110,12 +110,12 @@ public class MenuController : MonoBehaviour {
     }
 
     private void Start () {
-        InputController.Singleton.EnablePlayerMap ();
+        CloseAllWindows ();
 
         InputController.Singleton.controls.Menu.Submit.performed += ctx => closeDialogue = true;
         InputController.Singleton.controls.Menu.Reject.performed += ctx => closeAllWindows = true;
 
-        CloseAllWindows ();
+        SetupDialogue ("Thanks for playing! Use Z to interact with the products, textboxes and the merchant and X to close windows and open your inventory!");
     }
 
     private void Awake () {

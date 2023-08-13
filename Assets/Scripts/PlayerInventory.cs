@@ -41,8 +41,6 @@ public class PlayerInventory : MonoBehaviour {
     }
 
     private void Start () {
-        InputController.Singleton.EnablePlayerMap ();
-
         InputController.Singleton.controls.PlayerMap.OpenMenu.performed += ctx => openMenu = true;
 
         foreach (Item item in initialItems) AddItem (item);

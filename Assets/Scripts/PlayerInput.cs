@@ -19,8 +19,6 @@ public class PlayerInput : MonoBehaviour {
     private void Start () {
         player = GetComponent<Player> ();
 
-        InputController.Singleton.EnablePlayerMap ();
-
         InputController.Singleton.controls.PlayerMap.Interact.performed += ctx => SearchInteraction();
         InputController.Singleton.controls.PlayerMap.Interact.canceled += ctx => interactionLock = false;
 
