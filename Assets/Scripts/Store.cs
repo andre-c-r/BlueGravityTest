@@ -9,6 +9,6 @@ public class Store : InteractiveAgent {
     public override void Interact () {
         base.Interact ();
 
-        MenuController.Singleton.SetupInventory (itemsForSale);
+        MenuController.Singleton.SetupShop (itemsForSale);
     }
 }

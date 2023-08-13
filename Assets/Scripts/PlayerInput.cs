@@ -5,9 +5,6 @@ using UnityEngine;
 
 [RequireComponent (typeof (Player))]
 public class PlayerInput : MonoBehaviour {
-
-    public InputMaster controls;
-
     Player player;
 
     Vector2 movementInput = Vector2.zero;
@@ -18,26 +15,17 @@ public class PlayerInput : MonoBehaviour {
 
     bool searchInteraction = false, interactionLock = false;
 
-    void EnablePlayerMap () {
-        if (controls == null) {
-            controls = new InputMaster ();
-        }
-        controls.PlayerMap.Enable ();
-    }
 
-    private void Awake () {
+    private void Start () {
         player = GetComponent<Player> ();
 
-        EnablePlayerMap ();
+        InputController.Singleton.EnablePlayerMap ();
 
-        controls.PlayerMap.Interact.performed += ctx => SearchInteraction();
-        controls.PlayerMap.Interact.canceled += ctx => interactionLock = false;
+        InputController.Singleton.controls.PlayerMap.Interact.performed += ctx => SearchInteraction();
+        InputController.Singleton.controls.PlayerMap.Interact.canceled += ctx => interactionLock = false;
 
-        controls.PlayerMap.Movement.performed += ctx => ReadMomventInput (ctx.ReadValue<Vector2> ());
-        controls.PlayerMap.Movement.canceled += ctx => ReadMomventInput (Vector2.zero);
-    }
-    public void OnEnable () {
-        EnablePlayerMap ();
+        InputController.Singleton.controls.PlayerMap.Movement.performed += ctx => ReadMomventInput (ctx.ReadValue<Vector2> ());
+        InputController.Singleton.controls.PlayerMap.Movement.canceled += ctx => ReadMomventInput (Vector2.zero);
     }
 
     void SearchInteraction () {

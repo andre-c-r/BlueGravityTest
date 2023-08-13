@@ -1,48 +1,41 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using TMPro;
 
 public class MenuController : MonoBehaviour {
     public static MenuController Singleton;
 
-    public GameObject dialogueBox, inventoryBox;
+    public GameObject dialogueBox;
 
     TextMeshProUGUI dialogueText;
 
-    public GameObject inventoryCellPrefab, inventoryContent;
+    public GameObject inventoryBox, inventoryCellPrefab, inventoryContent;
 
-    public List<InventoryButton> inventoryCells;
+    public GameObject shopBox, firstCellShop;
 
-    public void SetupInventory (Item[] itemList) {
-        int i = 0;
+    public void SetupShop (Item[] itemList) {
+        InputController.Singleton.EnableMenuMap ();
 
-        //spawn extra cells if needed
-        foreach (Item item in itemList) {
-            if (i >= inventoryCells.Count)
-                inventoryCells.Add (Instantiate (inventoryCellPrefab, inventoryContent.transform).GetComponent<InventoryButton> ());
+        firstCellShop.GetComponent<Button> ().Select ();
 
-            i++;
-        }
-
-        //deactivate extra cells if needed
-        for (i = itemList.Length; i < inventoryCells.Count; i++) {
-            inventoryCells[i].gameObject.SetActive (false);
-        }
-
-        //Setup item values on inventory/shop
-        for (i = 0; i < itemList.Length; i++) {
-            inventoryCells[i].SetupItem (itemList[i]);
-        }
-
-        inventoryCells[0].button.Select ();
+        shopBox.SetActive (true);
     }
 
     public void SetupDialogue (string message) {
         dialogueText.text = message;
 
         dialogueBox.SetActive (true);
+    }
+
+    public void CloseAllWindows () {
+        dialogueBox.SetActive (false);
+        inventoryBox.SetActive (false);
+        shopBox.SetActive (false);
+
+        InputController.Singleton.EnablePlayerMap ();
     }
 
     private void Awake () {
