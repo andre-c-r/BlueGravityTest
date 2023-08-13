@@ -115,7 +115,7 @@ public class MenuController : MonoBehaviour {
         InputController.Singleton.controls.Menu.Submit.performed += ctx => closeDialogue = true;
         InputController.Singleton.controls.Menu.Reject.performed += ctx => closeAllWindows = true;
 
-        SetupDialogue ("Thanks for playing! Use Z to interact with the products, textboxes and the merchant and X to close windows and open your inventory!");
+        SetupDialogue ("Thanks for playing! Use the arrow keys to move, Z to interact with the products, textboxes and the merchant and X to close windows and open your inventory!");
     }
 
     private void Awake () {
